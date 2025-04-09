@@ -1,0 +1,96 @@
+.location {
+  background-color: var(--background-alt);
+  padding: 5rem 0;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.location h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-dark);
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--text-light);
+  margin-bottom: 3rem;
+}
+
+.locationContent {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+}
+
+.locationInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.addressCard {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px var(--shadow);
+  padding: 2rem;
+  height: 100%;
+}
+
+.addressCard h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary-dark);
+}
+
+.addressCard p {
+  margin-bottom: 0.5rem;
+  color: var(--text-light);
+}
+
+.contactInfo,
+.hours {
+  margin-top: 2rem;
+}
+
+.contactInfo h4,
+.hours h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+  color: var(--primary);
+}
+
+.map {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px var(--shadow);
+}
+
+.map iframe {
+  display: block;
+}
+
+@media (max-width: 992px) {
+  .locationContent {
+    grid-template-columns: 1fr;
+  }
+
+  .addressCard {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .location {
+    padding: 3rem 0;
+  }
+
+  .location h2 {
+    font-size: 2rem;
+  }
+}

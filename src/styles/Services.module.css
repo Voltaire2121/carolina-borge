@@ -1,0 +1,146 @@
+.services {
+  background-color: var(--background-alt);
+  padding: 5rem 0;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.services h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-dark);
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--text-light);
+  margin-bottom: 3rem;
+}
+
+.serviceCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px var(--shadow);
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px var(--shadow);
+}
+
+.iconWrapper {
+  width: 80px;
+  height: 80px;
+  background-color: var(--accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  color: var(--primary);
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary-dark);
+}
+
+.card p {
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+}
+
+.card ul {
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.card ul li {
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.card ul li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.serviceButton {
+  display: inline-block;
+  background-color: var(--primary);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  font-weight: 600;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.serviceButton:hover {
+  background-color: var(--primary-dark);
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .services {
+    padding: 3rem 0;
+  }
+
+  .services h2 {
+    font-size: 2rem;
+  }
+
+  .serviceCards {
+    grid-template-columns: 1fr;
+  }
+
+  /* Nuevas reglas para centrar elementos en móvil */
+  .card {
+    text-align: center;
+    align-items: center;
+  }
+
+  .iconWrapper {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .card h3 {
+    text-align: center;
+  }
+
+  .card p {
+    text-align: center;
+  }
+
+  .card ul {
+    display: inline-block;
+    text-align: left;
+  }
+
+  .serviceButton {
+    align-self: center;
+  }
+}

@@ -1,0 +1,234 @@
+.blog {
+  padding: 5rem 0;
+  background-color: white;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.blog h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-dark);
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--text-light);
+  margin-bottom: 3rem;
+}
+
+.blogGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.blogCard {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px var(--shadow);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.blogCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px var(--shadow);
+}
+
+.blogImage {
+  width: 100%;
+  height: 250px;
+  position: relative;
+}
+
+.blogImage img {
+  object-fit: cover;
+  height: 250px;
+  width: 100%;
+}
+
+.blogContent {
+  padding: 1.5rem;
+}
+
+.blogTitle {
+  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
+  color: var(--primary-dark);
+  line-height: 1.4;
+}
+
+.blogExcerpt {
+  color: var(--text-light);
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.blogDate {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.readMore {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary);
+  font-weight: 500;
+  margin-top: 1rem;
+  transition: color 0.3s ease;
+}
+
+.readMore:hover {
+  color: var(--primary-dark);
+}
+
+/* Modal Styles */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1100;
+  padding: 1rem;
+}
+
+.modal {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.closeButton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: var(--text-light);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  z-index: 10;
+}
+
+.closeButton:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: var(--text);
+}
+
+.modalImage {
+  width: 100%;
+  height: 300px;
+  position: relative;
+}
+
+.modalImage img {
+  object-fit: cover;
+  height: 300px;
+  width: 100%;
+}
+
+.modalContent {
+  padding: 2rem;
+}
+
+.modalTitle {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--primary-dark);
+}
+
+.modalDate {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.modalText {
+  color: var(--text);
+  line-height: 1.8;
+}
+
+.modalText p {
+  margin-bottom: 1.5rem;
+}
+
+.modalText h3 {
+  font-size: 1.4rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.modalText ul {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.modalText li {
+  margin-bottom: 0.75rem;
+  position: relative;
+}
+
+.modalText li::before {
+  content: "•";
+  color: var(--primary);
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+@media (max-width: 768px) {
+  .blog {
+    padding: 3rem 0;
+  }
+
+  .blog h2 {
+    font-size: 2rem;
+  }
+
+  .blogGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .modalImage {
+    height: 200px;
+  }
+
+  .modalTitle {
+    font-size: 1.5rem;
+  }
+}

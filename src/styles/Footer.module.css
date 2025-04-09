@@ -1,0 +1,155 @@
+.footer {
+  background-color: var(--primary-dark);
+  color: white;
+  padding: 4rem 0 2rem;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footerContent {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footerLogo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.logoImage {
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.footerLogo h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.footerLogo p {
+  color: var(--accent);
+}
+
+.footerLinks h4,
+.footerContact h4,
+.footerSocial h4 {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: white;
+  position: relative;
+}
+
+.footerLinks h4::after,
+.footerContact h4::after,
+.footerSocial h4::after {
+  content: "";
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background-color: var(--primary-light);
+}
+
+.footerLinks ul li {
+  margin-bottom: 0.75rem;
+}
+
+.footerLinks ul li a {
+  color: var(--accent);
+  transition: color 0.3s ease;
+}
+
+.footerLinks ul li a:hover {
+  color: white;
+}
+
+.footerContact ul li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  color: var(--accent);
+}
+
+.emailItem {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.emailIcon {
+  flex-shrink: 0;
+  margin-right: 0.5rem;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 1rem;
+}
+
+.socialIcons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.socialIcons a:hover {
+  background-color: var(--primary);
+  transform: translateY(-3px);
+}
+
+.footerBottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--accent);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 3rem 0 1.5rem;
+  }
+
+  .footerContent {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footerLogo,
+  .footerLinks,
+  .footerContact,
+  .footerSocial {
+    text-align: center;
+    align-items: center;
+  }
+
+  .footerLinks h4::after,
+  .footerContact h4::after,
+  .footerSocial h4::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .footerContact ul li {
+    justify-content: center;
+  }
+
+  .socialIcons {
+    justify-content: center;
+  }
+}
