@@ -63,7 +63,7 @@ export default function Header() {
             height={60}
             className={styles.logoImage}
           />
-          <h1>Carolina Borge</h1>
+          <p>Carolina Borge</p>
         </div>
 
         <div className={styles.mobileMenuButton} onClick={toggleMenu}>

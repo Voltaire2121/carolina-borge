@@ -40,7 +40,7 @@ export default function Pricing() {
               <div className={styles.cardHeader}>
                 <h3>Sesión Individual</h3>
                 <div className={styles.price}>
-                  <span className={styles.amount}>$110.000</span>
+                  <span className={styles.amount}>$150.000</span>
                 </div>
               </div>
               <div className={styles.cardBody}>
@@ -69,7 +69,7 @@ export default function Pricing() {
               <div className={styles.cardHeader}>
                 <h3>Paquete 5 sesiones</h3>
                 <div className={styles.price}>
-                  <span className={styles.amount}>$495.000</span>
+                  <span className={styles.amount}>$700.000</span>
                 </div>
               </div>
               <div className={styles.cardBody}>
@@ -84,7 +84,7 @@ export default function Pricing() {
                     <Check size={18} /> Soporte por whatsapp
                   </li>
                   <li>
-                    <Check size={18} /> 10% de ahorro sobre precio regular
+                    <Check size={18} /> Ahorra $50.000 sobre precio regular
                   </li>
                   <li>
                     <Check size={18} /> Disponible presencial o virtual
@@ -100,7 +100,7 @@ export default function Pricing() {
               <div className={styles.cardHeader}>
                 <h3>Paquete 8 sesiones</h3>
                 <div className={styles.price}>
-                  <span className={styles.amount}>$700.000</span>
+                  <span className={styles.amount}>$960.000</span>
                 </div>
               </div>
               <div className={styles.cardBody}>

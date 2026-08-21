@@ -5,6 +5,7 @@ import WhatsAppButton from '@/components/WhatsAppButton'
 import RouteTracker from '@/components/RouteTracker'
 import Home from '@/pages/Home'
 import CouplesTherapy from '@/pages/CouplesTherapy'
+import NotFound from '@/pages/NotFound'
 import './index.css'
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/terapia-de-pareja-barranquilla" element={<CouplesTherapy />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
       <WhatsAppButton />
