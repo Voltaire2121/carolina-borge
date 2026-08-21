@@ -1,0 +1,129 @@
+.hero {
+  background-color: var(--background-alt);
+  text-align: center;
+  padding-top: 8rem;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 7rem;
+  }
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  color: var(--primary-dark);
+  margin-bottom: 1rem;
+}
+
+.heroSubtitle {
+  font-size: 1.2rem;
+  color: var(--text-light);
+  max-width: 700px;
+  margin: 0 auto 2rem;
+}
+
+.ctaButton {
+  display: inline-block;
+  background-color: var(--primary);
+  color: white;
+  padding: 0.9rem 2rem;
+  border-radius: 30px;
+  font-weight: 600;
+}
+
+.ctaButton:hover {
+  background-color: var(--primary-dark);
+  color: white;
+}
+
+.section h2 {
+  font-size: 2rem;
+  color: var(--primary-dark);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.intro {
+  max-width: 800px;
+  margin: 0 auto;
+  color: var(--text-light);
+}
+
+.intro p {
+  margin-bottom: 1rem;
+}
+
+.triggerGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(240px, 1fr));
+  gap: 1.5rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+  .triggerGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.triggerCard {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px var(--shadow);
+  padding: 1.5rem;
+}
+
+.triggerCard h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.triggerCard p {
+  color: var(--text-light);
+  font-size: 0.95rem;
+}
+
+.faq {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faqItem {
+  border-bottom: 1px solid var(--border);
+  padding: 1.5rem 0;
+}
+
+.faqItem h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.faqItem p {
+  color: var(--text-light);
+}
+
+.ctaBanner {
+  background-color: var(--background-alt);
+  text-align: center;
+}
+
+.ctaBanner h2 {
+  margin-bottom: 1rem;
+}
+
+.ctaBanner p {
+  color: var(--text-light);
+  margin-bottom: 2rem;
+}
+
+.internalLinks {
+  text-align: center;
+  padding-top: 0;
+  padding-bottom: 3rem;
+}
+
+.internalLinks a {
+  margin: 0 0.75rem;
+}

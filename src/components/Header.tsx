@@ -3,12 +3,15 @@
 import type React from "react"
 
 import { useState } from "react"
+import { Link, useLocation, useNavigate } from "react-router-dom"
 import styles from "@/styles/Header.module.css"
 import AppointmentModal from "./AppointmentModal"
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [modalOpen, setModalOpen] = useState(false)
+  const location = useLocation()
+  const navigate = useNavigate()
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen)
@@ -20,6 +23,12 @@ export default function Header() {
     // Cerrar el menú móvil si está abierto
     if (menuOpen) {
       setMenuOpen(false)
+    }
+
+    // Si no estamos en el inicio, navegar allí primero y dejar que Home haga el scroll
+    if (location.pathname !== "/") {
+      navigate(`/#${targetId}`)
+      return
     }
 
     // Encontrar el elemento de destino
@@ -94,6 +103,11 @@ export default function Header() {
               <a href="#location" onClick={(e) => handleNavClick(e, "location")}>
                 Ubicación
               </a>
+            </li>
+            <li>
+              <Link to="/terapia-de-pareja-barranquilla" onClick={() => setMenuOpen(false)}>
+                Terapia de Pareja
+              </Link>
             </li>
             <li>
               <a href="#" className={styles.ctaButton} onClick={openAppointmentModal}>

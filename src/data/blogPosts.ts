@@ -1,4 +1,4 @@
-import type { BlogPost } from "@/types/blog"
+import type { BlogPost } from "@/types/blog";
 
 export const blogPosts: BlogPost[] = [
   {
@@ -6,7 +6,7 @@ export const blogPosts: BlogPost[] = [
     title: "Tips básicos para el manejo de los ataques de ansiedad",
     excerpt:
       "Los ataques de ansiedad pueden ser abrumadores, pero existen técnicas efectivas para manejarlos. Descubre cómo controlar los síntomas y recuperar la calma.",
-    image: "images/ansiedad.png",
+    image: "images/ansiedad.avif",
     date: "2 de abril, 2025",
     content: `
       <p>Los ataques de ansiedad pueden ser experiencias intensas y aterradoras, caracterizadas por una sensación repentina de miedo intenso que desencadena reacciones físicas severas cuando no existe un peligro real o una amenaza aparente. Pueden ocurrir en cualquier momento y lugar, afectando significativamente la calidad de vida de quienes los padecen.</p>
@@ -51,7 +51,7 @@ export const blogPosts: BlogPost[] = [
     title: "Tips básicos para el manejo de niños retadores",
     excerpt:
       "Criar a niños con comportamientos desafiantes puede ser todo un reto. Aprende estrategias efectivas para establecer límites saludables y fomentar una relación positiva.",
-    image: "images/ninos-retadores.png",
+    image: "images/ninos-retadores.avif",
     date: "3 de octubre, 2024",
     content: `
       <p>Los niños con comportamientos retadores o desafiantes pueden poner a prueba incluso a los padres más pacientes. Estos comportamientos pueden manifestarse como negativas constantes, rabietas, agresividad, o resistencia a seguir instrucciones. Es importante entender que estos comportamientos a menudo son una forma de comunicación y pueden estar relacionados con necesidades no satisfechas, frustración, o dificultades para regular sus emociones.</p>
@@ -100,10 +100,11 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 3,
-    title: "Tips básicos para el manejo de los primeros días de tu ruptura sentimental",
+    title:
+      "Tips básicos para el manejo de los primeros días de tu ruptura sentimental",
     excerpt:
       "Las rupturas sentimentales pueden ser devastadoras. Descubre estrategias saludables para procesar tus emociones y comenzar el camino hacia la recuperación emocional.",
-    image: "images/ruptura.png",
+    image: "images/ruptura.avif",
     date: "22 de febrero, 2024",
     content: `
       <p>Las rupturas sentimentales pueden ser experiencias profundamente dolorosas que afectan nuestro bienestar emocional, físico y social. Los primeros días después de una ruptura suelen ser los más difíciles, caracterizados por una montaña rusa de emociones intensas que pueden incluir tristeza, ira, confusión, ansiedad y hasta alivio.</p>
@@ -153,4 +154,4 @@ export const blogPosts: BlogPost[] = [
       <p>Recuerda que superar una ruptura es un proceso, no un evento. Sé paciente contigo mismo y confía en que, con el tiempo y las estrategias adecuadas, el dolor disminuirá y podrás avanzar hacia una nueva etapa de tu vida.</p>
     `,
   },
-]
+];

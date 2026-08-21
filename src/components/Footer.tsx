@@ -3,13 +3,21 @@
 import type React from "react"
 
 import { Mail, Phone, MapPin, Instagram } from "lucide-react"
+import { Link, useLocation, useNavigate } from "react-router-dom"
 import styles from "@/styles/Footer.module.css"
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
+  const location = useLocation()
+  const navigate = useNavigate()
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     e.preventDefault()
+
+    if (location.pathname !== "/") {
+      navigate(`/#${targetId}`)
+      return
+    }
 
     // Encontrar el elemento de destino
     const targetElement = document.getElementById(targetId)
@@ -75,6 +83,9 @@ export default function Footer() {
                 <a href="#location" onClick={(e) => handleNavClick(e, "location")}>
                   Ubicación
                 </a>
+              </li>
+              <li>
+                <Link to="/terapia-de-pareja-barranquilla">Terapia de Pareja</Link>
               </li>
             </ul>
           </div>

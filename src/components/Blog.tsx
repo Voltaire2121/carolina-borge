@@ -31,7 +31,7 @@ export default function Blog() {
             {blogPosts.map((post) => (
               <div key={post.id} className={styles.blogCard} onClick={() => openModal(post)}>
                 <div className={styles.blogImage}>
-                  <img src={post.image || "images/placeholder.svg"} alt={post.title} />
+                  <img src={post.image || "/placeholder.svg"} alt={post.title} />
                 </div>
                 <div className={styles.blogContent}>
                   <h3 className={styles.blogTitle}>{post.title}</h3>

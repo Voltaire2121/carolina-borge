@@ -6,12 +6,18 @@ import { useState } from "react"
 import { Check } from "lucide-react"
 import styles from "@/styles/Pricing.module.css"
 import AppointmentModal from "./AppointmentModal"
+import { trackEvent, trackGoogleAdsConversion } from "@/lib/analytics"
 
 export default function Pricing() {
   const [modalOpen, setModalOpen] = useState(false)
 
   const openWhatsApp = (e: React.MouseEvent<HTMLAnchorElement>, planType: string) => {
     e.preventDefault()
+    trackEvent("whatsapp_click", { location: "pricing", plan_type: planType })
+    trackGoogleAdsConversion(import.meta.env.VITE_GOOGLE_ADS_CONVERSION_LABEL_WHATSAPP, {
+      location: "pricing",
+      plan_type: planType,
+    })
     const phoneNumber = "573017255638" // Formato internacional sin el "+"
     const message = encodeURIComponent(`Hola, estoy interesado en más información acerca del plan ${planType}.`)
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank")

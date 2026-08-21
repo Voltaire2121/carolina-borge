@@ -1,26 +1,21 @@
+import { Routes, Route } from 'react-router-dom'
 import Header from '@/components/Header'
-import Hero from '@/components/Hero'
-import AboutMe from '@/components/AboutMe'
-import Services from '@/components/Services'
-import Pricing from '@/components/Pricing'
-import Blog from '@/components/Blog'
-import Location from '@/components/Location'
 import Footer from '@/components/Footer'
 import WhatsAppButton from '@/components/WhatsAppButton'
+import RouteTracker from '@/components/RouteTracker'
+import Home from '@/pages/Home'
+import CouplesTherapy from '@/pages/CouplesTherapy'
 import './index.css'
 
 function App() {
   return (
     <div className="app">
+      <RouteTracker />
       <Header />
-      <main>
-        <Hero />
-        <AboutMe />
-        <Services />
-        <Pricing />
-        <Blog />
-        <Location />
-      </main>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/terapia-de-pareja-barranquilla" element={<CouplesTherapy />} />
+      </Routes>
       <Footer />
       <WhatsAppButton />
     </div>

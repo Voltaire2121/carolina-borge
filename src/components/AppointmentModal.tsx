@@ -5,11 +5,18 @@ import type React from "react"
 import { useState, useEffect } from "react"
 import { X, Calendar, Clock, Check, Loader2, AlertCircle } from "lucide-react"
 import styles from "@/styles/AppointmentModal.module.css"
+import { trackEvent, trackGoogleAdsConversion } from "@/lib/analytics"
 
 interface AppointmentModalProps {
   isOpen: boolean
   onClose: () => void
-  appointmentType?: "presencial" | "virtual" | null
+  appointmentType?: "presencial" | "virtual" | "pareja" | null
+}
+
+const appointmentTypeLabels: Record<"presencial" | "virtual" | "pareja", string> = {
+  presencial: "Presencial",
+  virtual: "Virtual",
+  pareja: "Terapia de Pareja",
 }
 
 interface TimeSlot {
@@ -112,9 +119,9 @@ export default function AppointmentModal({ isOpen, onClose, appointmentType = nu
       // Formatear la fecha para el correo
       const formattedDate = formatDate(selectedDate)
 
-      // Determinar el tipo de cita (presencial, virtual o no especificado)
+      // Determinar el tipo de cita (presencial, virtual, pareja o no especificado)
       const tipoConsulta = appointmentType
-        ? `Tipo de consulta: ${appointmentType === "presencial" ? "Presencial" : "Virtual"}`
+        ? `Tipo de consulta: ${appointmentTypeLabels[appointmentType]}`
         : "Tipo de consulta: No especificado"
 
       // Preparar el mensaje con todos los detalles de la cita
@@ -146,11 +153,16 @@ export default function AppointmentModal({ isOpen, onClose, appointmentType = nu
           email: email,
           phone: phone,
           message: appointmentMessage,
-          _subject: `Nueva Cita ${appointmentType ? (appointmentType === "presencial" ? "Presencial" : "Virtual") : ""}: ${name} - ${formattedDate} ${selectedSlot}`,
+          _subject: `Nueva Cita ${appointmentType ? appointmentTypeLabels[appointmentType] : ""}: ${name} - ${formattedDate} ${selectedSlot}`,
         }),
       })
 
       if (response.ok) {
+        trackEvent("generate_lead", { appointment_type: appointmentType ?? "unspecified" })
+        trackGoogleAdsConversion(import.meta.env.VITE_GOOGLE_ADS_CONVERSION_LABEL_LEAD, {
+          appointment_type: appointmentType ?? "unspecified",
+        })
+
         setSubmitStatus({
           type: "success",
           message: "¡Cita reservada con éxito! Carolina recibirá los detalles y se pondrá en contacto contigo pronto.",
@@ -202,9 +214,7 @@ export default function AppointmentModal({ isOpen, onClose, appointmentType = nu
             <h2 className={styles.modalTitle}>
               Reserva tu Cita
               {appointmentType && (
-                <span className={styles.appointmentTypeTag}>
-                  {appointmentType === "presencial" ? "Presencial" : "Virtual"}
-                </span>
+                <span className={styles.appointmentTypeTag}>{appointmentTypeLabels[appointmentType]}</span>
               )}
             </h2>
 
@@ -273,9 +283,7 @@ export default function AppointmentModal({ isOpen, onClose, appointmentType = nu
                   <Calendar size={16} />
                   {selectedDate && formatDate(selectedDate)} a las {selectedSlot}
                   {appointmentType && (
-                    <span className={styles.appointmentTypeIndicator}>
-                      {appointmentType === "presencial" ? "Presencial" : "Virtual"}
-                    </span>
+                    <span className={styles.appointmentTypeIndicator}>{appointmentTypeLabels[appointmentType]}</span>
                   )}
                 </p>
 
