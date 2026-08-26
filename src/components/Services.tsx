@@ -6,6 +6,7 @@ import { useState } from "react"
 import { MapPin, Video, Heart } from "lucide-react"
 import styles from "@/styles/Services.module.css"
 import AppointmentModal from "./AppointmentModal"
+import { trackEvent } from "@/lib/analytics"
 
 export default function Services() {
   const [modalOpen, setModalOpen] = useState(false)
@@ -13,6 +14,7 @@ export default function Services() {
 
   const openAppointmentModal = (e: React.MouseEvent<HTMLAnchorElement>, type: "presencial" | "virtual" | "pareja") => {
     e.preventDefault()
+    trackEvent("booking_modal_open", { origin: "services", service: type })
     setAppointmentType(type)
     setModalOpen(true)
   }

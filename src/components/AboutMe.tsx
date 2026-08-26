@@ -11,7 +11,7 @@ export default function AboutMe() {
           <div className={styles.imageContainer}>
             <div className={styles.imageWrapper}>
               <img
-                src="images/carolina-borge.jpeg"
+                src="/images/carolina-borge.jpeg"
                 alt="Foto de Carolina Borge"
                 width={300}
                 height={300}

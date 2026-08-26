@@ -6,6 +6,7 @@ import { useState } from "react"
 import { Link, useLocation, useNavigate } from "react-router-dom"
 import styles from "@/styles/Header.module.css"
 import AppointmentModal from "./AppointmentModal"
+import { trackEvent } from "@/lib/analytics"
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -49,6 +50,7 @@ export default function Header() {
 
   const openAppointmentModal = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault()
+    trackEvent("booking_modal_open", { origin: "header", service: "unspecified" })
     setModalOpen(true)
   }
 

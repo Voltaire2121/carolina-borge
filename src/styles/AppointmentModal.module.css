@@ -66,6 +66,109 @@
   margin-top: 0.5rem;
 }
 
+.stepIndicator {
+  text-align: center;
+  color: var(--text-light);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.5rem;
+}
+
+.priceInfo {
+  text-align: center;
+  color: var(--primary-dark);
+  font-weight: 600;
+  background-color: var(--accent);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.modalitySelector {
+  margin-bottom: 1.5rem;
+}
+
+.modalitySelector h3 {
+  margin-bottom: 0.75rem;
+  color: var(--primary-dark);
+}
+
+.modalityOptions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.modalityButton {
+  flex: 1;
+  padding: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.modalityButton:hover {
+  border-color: var(--primary-light);
+  background-color: var(--accent);
+}
+
+.modalityButton.selected {
+  background-color: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+.showMoreDatesButton {
+  display: block;
+  margin: -1rem auto 2rem;
+  background: none;
+  border: none;
+  color: var(--primary);
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.showMoreDatesButton:hover {
+  color: var(--primary-dark);
+}
+
+.honeypot {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.successWhatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  /* Verde más oscuro que el estándar de WhatsApp (#25d366): con texto
+     blanco encima, #25d366 da un contraste de 1.98:1 — falla WCAG AA
+     (mínimo 4.5:1). Este tono da 5.42:1. */
+  background-color: #0b7a41;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  font-weight: 600;
+}
+
+.successWhatsapp:hover {
+  background-color: #0a6e3a;
+  color: white;
+}
+
 .dateSelection h3 {
   margin-bottom: 1rem;
   color: var(--primary-dark);
@@ -240,6 +343,29 @@
 .formGroup textarea:focus {
   outline: none;
   border-color: var(--primary);
+}
+
+.consentLabel {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-weight: 400;
+  font-size: 0.9rem;
+  color: var(--text-light);
+  cursor: pointer;
+}
+
+.consentLabel input[type="checkbox"] {
+  width: auto;
+  padding: 0;
+  margin-top: 0.15rem;
+  flex-shrink: 0;
+  accent-color: var(--primary);
+}
+
+.consentLabel a {
+  color: var(--primary);
+  text-decoration: underline;
 }
 
 .formActions {

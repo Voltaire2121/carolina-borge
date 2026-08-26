@@ -37,10 +37,20 @@
     <meta name="twitter:image" content="https://carolinaborge.com/images/carolina-borge.jpeg" />
 
     <!-- Google tag (gtag.js) - IDs come from .env.local (VITE_GA4_MEASUREMENT_ID / VITE_GOOGLE_ADS_ID), inert until set -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=%VITE_GA4_MEASUREMENT_ID%"></script>
+    <!-- Consent Mode v2: default denied until CookieConsentBanner records a choice (src/components/CookieConsentBanner.tsx) -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', {
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'analytics_storage': 'denied',
+        'wait_for_update': 500
+      });
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=%VITE_GA4_MEASUREMENT_ID%"></script>
+    <script>
       gtag('js', new Date());
       gtag('config', '%VITE_GA4_MEASUREMENT_ID%', { send_page_view: false });
       gtag('config', '%VITE_GOOGLE_ADS_ID%');
@@ -88,6 +98,7 @@
         "sameAs": ["https://www.instagram.com/psicologacarolinaborge/"],
         "employee": {
           "@type": "Person",
+          "@id": "https://carolinaborge.com/#carolina-borge",
           "name": "Carolina Borge",
           "jobTitle": "Psicóloga Clínica"
         }

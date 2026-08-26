@@ -1,0 +1,42 @@
+.bar {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .bar {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 900;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.15);
+  }
+
+  .reservarButton,
+  .whatsappButton {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    border: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+  }
+
+  .reservarButton {
+    background-color: var(--primary);
+    color: white;
+  }
+
+  .whatsappButton {
+    /* Verde más oscuro que el estándar de WhatsApp (#25d366): con texto
+       blanco encima, #25d366 da un contraste de 1.98:1 — falla WCAG AA
+       (mínimo 4.5:1). Este tono da 5.42:1. */
+    background-color: #0b7a41;
+    color: white;
+  }
+}

@@ -120,6 +120,19 @@
   font-size: 0.9rem;
 }
 
+.legalLinks {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.legalLinks a {
+  color: var(--accent);
+}
+
+.legalLinks a:hover {
+  color: white;
+}
+
 @media (max-width: 768px) {
   .footer {
     padding: 3rem 0 1.5rem;

@@ -41,7 +41,7 @@ export default function Footer() {
         <div className={styles.footerContent}>
           <div className={styles.footerLogo}>
             <img
-              src="images/logo.png"
+              src="/images/logo.png"
               alt="Logo de Carolina Borge"
               width={80}
               height={80}
@@ -128,6 +128,11 @@ export default function Footer() {
 
         <div className={styles.footerBottom}>
           <p>&copy; {currentYear} Carolina Borge. Todos los derechos reservados.</p>
+          <p className={styles.legalLinks}>
+            <Link to="/politica-de-privacidad">Política de Privacidad</Link>
+            <span aria-hidden="true"> · </span>
+            <Link to="/terminos-y-condiciones">Términos y Condiciones</Link>
+          </p>
         </div>
       </div>
     </footer>

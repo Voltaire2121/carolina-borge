@@ -1,8 +1,12 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
+import { GraduationCap, Award } from "lucide-react"
 import styles from "@/styles/CouplesTherapy.module.css"
 import AppointmentModal from "@/components/AppointmentModal"
+import StickyMobileCTA from "@/components/StickyMobileCTA"
+import Location from "@/components/Location"
 import { useSEO } from "@/hooks/useSEO"
+import { trackEvent } from "@/lib/analytics"
 
 const faqs = [
   {
@@ -25,10 +29,35 @@ const faqs = [
     answer:
       "Es un buen punto de partida. Podemos comenzar con un proceso individual enfocado en la relación mientras la otra persona decide si desea sumarse más adelante.",
   },
+  {
+    question: "¿Cuánto cuesta una sesión de terapia de pareja?",
+    answer:
+      "La sesión presencial de 50 minutos tiene un valor de $180.000 COP y la sesión virtual de $150.000 COP. Los precios se muestran de forma transparente desde el primer contacto.",
+  },
+  {
+    question: "¿Atienden a parejas del mismo sexo?",
+    answer:
+      "Sí. El espacio está abierto a todo tipo de parejas, sin importar su orientación sexual o identidad de género, con el mismo respeto y enfoque profesional.",
+  },
+  {
+    question: "¿Es confidencial lo que hablamos en sesión?",
+    answer:
+      "Sí. Todo lo compartido en sesión está protegido por el secreto profesional del psicólogo, conforme a la normativa colombiana que rige el ejercicio de la psicología.",
+  },
+  {
+    question: "¿Cada cuánto se debe asistir a terapia de pareja?",
+    answer:
+      "Lo habitual es una sesión semanal o quincenal, especialmente al inicio del proceso. La frecuencia se ajusta según el avance y las necesidades de cada pareja.",
+  },
 ]
 
 export default function CouplesTherapy() {
   const [modalOpen, setModalOpen] = useState(false)
+
+  const openModal = (origin: string) => {
+    trackEvent("booking_modal_open", { origin, service: "pareja" })
+    setModalOpen(true)
+  }
 
   useSEO({
     title: "Terapia de Pareja en Barranquilla | Carolina Borge - Psicóloga",
@@ -56,6 +85,34 @@ export default function CouplesTherapy() {
           acceptedAnswer: { "@type": "Answer", text: faq.answer },
         })),
       },
+      {
+        "@type": "Person",
+        "@id": "https://carolinaborge.com/#carolina-borge",
+        name: "Carolina Borge",
+        jobTitle: "Psicóloga Clínica",
+        alumniOf: {
+          "@type": "CollegeOrUniversity",
+          name: "Universidad de la Sabana",
+        },
+        worksFor: { "@id": "https://carolinaborge.com/#business" },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Inicio",
+            item: "https://carolinaborge.com/",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Terapia de Pareja en Barranquilla",
+            item: "https://carolinaborge.com/terapia-de-pareja-barranquilla",
+          },
+        ],
+      },
     ],
   }
 
@@ -75,11 +132,41 @@ export default function CouplesTherapy() {
             className={styles.ctaButton}
             onClick={(e) => {
               e.preventDefault()
-              setModalOpen(true)
+              openModal("pareja_hero")
             }}
           >
             Reservar Cita de Pareja
           </a>
+        </div>
+      </section>
+
+      <section className={styles.section}>
+        <div className={`container ${styles.credentials}`}>
+          <img
+            src="/images/carolina-borge.jpeg"
+            alt="Carolina Borge, psicóloga clínica"
+            width={140}
+            height={140}
+            className={styles.credentialsPhoto}
+          />
+          <div>
+            <h2 className={styles.credentialsName}>Carolina Borge</h2>
+            <p className={styles.credentialsRole}>Psicóloga Clínica</p>
+            <ul className={styles.credentialsList}>
+              <li>
+                <GraduationCap size={18} />
+                Profesional en psicología, Universidad de la Sabana
+              </li>
+              <li>
+                <Award size={18} />
+                Más de 10 años de experiencia clínica
+              </li>
+              <li>
+                <Award size={18} />
+                Enfoque cognitivo-conductual
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
 
@@ -124,6 +211,64 @@ export default function CouplesTherapy() {
         </div>
       </section>
 
+      <section className={`${styles.section} ${styles.ctaBanner}`}>
+        <div className="container">
+          <h2>¿Listos para dar el siguiente paso?</h2>
+          <p>Agenda una primera sesión y empieza a construir una comunicación más sana.</p>
+          <a
+            href="#"
+            className={styles.ctaButton}
+            onClick={(e) => {
+              e.preventDefault()
+              openModal("pareja_mid_page")
+            }}
+          >
+            Reservar Cita de Pareja
+          </a>
+        </div>
+      </section>
+
+      <section className={styles.section}>
+        <div className="container">
+          <h2>Inversión en tu relación</h2>
+          <div className={styles.pricingGrid}>
+            <div className={styles.priceCard}>
+              <h3>Presencial</h3>
+              <p className={styles.priceAmount}>$180.000</p>
+              <p className={styles.priceDetail}>Sesión de 50 minutos · Consultorio en Barranquilla</p>
+            </div>
+            <div className={styles.priceCard}>
+              <h3>Virtual</h3>
+              <p className={styles.priceAmount}>$150.000</p>
+              <p className={styles.priceDetail}>Sesión de 50 minutos · Videollamada desde cualquier lugar</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.section}>
+        <div className="container">
+          <h2>Qué esperar en la primera sesión</h2>
+          <div className={styles.stepsGrid}>
+            <div className={styles.stepCard}>
+              <span className={styles.stepNumber}>1</span>
+              <h3>Conversación inicial</h3>
+              <p>Cada persona comparte, con libertad, cómo ve la relación y qué le gustaría trabajar.</p>
+            </div>
+            <div className={styles.stepCard}>
+              <span className={styles.stepNumber}>2</span>
+              <h3>Un espacio sin juicios</h3>
+              <p>El objetivo es entender, no señalar culpables. Ambos son escuchados por igual.</p>
+            </div>
+            <div className={styles.stepCard}>
+              <span className={styles.stepNumber}>3</span>
+              <h3>Plan orientativo</h3>
+              <p>Al cierre, se define en conjunto un plan de trabajo ajustado a los objetivos de la pareja.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className={styles.section}>
         <div className="container">
           <h2>Nuestro enfoque</h2>
@@ -136,6 +281,10 @@ export default function CouplesTherapy() {
           </div>
         </div>
       </section>
+
+      {/* Prueba social: pendiente — se agrega cuando lleguen los testimonios reales */}
+
+      <Location />
 
       <section className={styles.section}>
         <div className="container">
@@ -160,7 +309,7 @@ export default function CouplesTherapy() {
             className={styles.ctaButton}
             onClick={(e) => {
               e.preventDefault()
-              setModalOpen(true)
+              openModal("pareja_cta_final")
             }}
           >
             Reservar Cita de Pareja
@@ -172,6 +321,8 @@ export default function CouplesTherapy() {
         <Link to="/">Volver al inicio</Link>
         <Link to="/#services">Ver todos los servicios</Link>
       </div>
+
+      <StickyMobileCTA onReservar={() => openModal("pareja_sticky_cta")} />
 
       <AppointmentModal isOpen={modalOpen} onClose={() => setModalOpen(false)} appointmentType="pareja" />
     </main>

@@ -12,4 +12,16 @@
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+  <url>
+    <loc>https://carolinaborge.com/politica-de-privacidad</loc>
+    <lastmod>2026-08-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://carolinaborge.com/terminos-y-condiciones</loc>
+    <lastmod>2026-08-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
 </urlset>

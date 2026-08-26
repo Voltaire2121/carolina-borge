@@ -4,6 +4,7 @@ import type React from "react"
 import { useState } from "react"
 import styles from "@/styles/Hero.module.css"
 import AppointmentModal from "./AppointmentModal"
+import { trackEvent } from "@/lib/analytics"
 
 export default function Hero() {
   const [modalOpen, setModalOpen] = useState(false)
@@ -23,6 +24,7 @@ export default function Hero() {
 
   const openAppointmentModal = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault()
+    trackEvent("booking_modal_open", { origin: "hero", service: "unspecified" })
     setModalOpen(true)
   }
 
@@ -31,7 +33,7 @@ export default function Hero() {
       <section id="home" className={styles.hero}>
         <div className={styles.backgroundImage}>
           <img
-            src="images/brain-detailed.png"
+            src="/images/brain-detailed.png"
             alt="Ilustración de cerebro"
             sizes="100vw"
             className={styles.brainImage}

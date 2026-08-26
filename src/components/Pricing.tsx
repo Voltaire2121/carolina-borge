@@ -25,6 +25,7 @@ export default function Pricing() {
 
   const openAppointmentModal = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault()
+    trackEvent("booking_modal_open", { origin: "pricing", service: "unspecified" })
     setModalOpen(true)
   }
 
