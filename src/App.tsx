@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
@@ -13,6 +14,8 @@ import NotFound from '@/pages/NotFound'
 import './index.css'
 
 function App() {
+  const [isCookieBannerVisible, setCookieBannerVisible] = useState(false)
+
   return (
     <div className="app">
       <RouteTracker />
@@ -26,8 +29,8 @@ function App() {
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
-      <WhatsAppButton />
-      <CookieConsentBanner />
+      <WhatsAppButton isCookieBannerVisible={isCookieBannerVisible} />
+      <CookieConsentBanner onVisibilityChange={setCookieBannerVisible} />
     </div>
   )
 }

@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
-import { GraduationCap, Award } from "lucide-react"
+import { Award, GraduationCap } from "lucide-react"
 import styles from "@/styles/CouplesTherapy.module.css"
 import AppointmentModal from "@/components/AppointmentModal"
 import StickyMobileCTA from "@/components/StickyMobileCTA"
@@ -192,20 +192,46 @@ export default function CouplesTherapy() {
           <h2>¿Cuándo buscar terapia de pareja?</h2>
           <div className={styles.triggerGrid}>
             <div className={styles.triggerCard}>
-              <h3>Comunicación difícil</h3>
-              <p>Discusiones que se repiten sin llegar a acuerdos, o silencios que se prolongan.</p>
+              <span className={styles.mi} style={{ fontSize: "26px", color: "#8a2be2" }} aria-hidden="true">
+                loop
+              </span>
+              <h3>Discusiones que se repiten</h3>
+              <p>Vuelven una y otra vez al mismo conflicto sin encontrar acuerdos.</p>
             </div>
             <div className={styles.triggerCard}>
-              <h3>Infidelidad o pérdida de confianza</h3>
-              <p>Procesos de reconstrucción del vínculo tras una ruptura de confianza.</p>
+              <span className={styles.mi} style={{ fontSize: "26px", color: "#8a2be2" }} aria-hidden="true">
+                forum
+              </span>
+              <h3>Ya no se hablan de verdad</h3>
+              <p>Hablan de la rutina, pero les cuesta expresar lo que sienten.</p>
             </div>
             <div className={styles.triggerCard}>
-              <h3>Decisiones de convivencia</h3>
-              <p>Mudanza, finanzas compartidas, crianza u otros acuerdos importantes.</p>
+              <span className={styles.mi} style={{ fontSize: "26px", color: "#8a2be2" }} aria-hidden="true">
+                healing
+              </span>
+              <h3>Una infidelidad o una mentira</h3>
+              <p>Quieren saber si es posible reconstruir la confianza y por dónde empezar.</p>
             </div>
             <div className={styles.triggerCard}>
-              <h3>Antes del matrimonio</h3>
-              <p>Terapia preventiva para empezar una nueva etapa con herramientas claras.</p>
+              <span className={styles.mi} style={{ fontSize: "26px", color: "#8a2be2" }} aria-hidden="true">
+                favorite_border
+              </span>
+              <h3>Distancia emocional o sexual</h3>
+              <p>Viven juntos, pero sienten que cada uno está llevando su vida por separado.</p>
+            </div>
+            <div className={styles.triggerCard}>
+              <span className={styles.mi} style={{ fontSize: "26px", color: "#8a2be2" }} aria-hidden="true">
+                alt_route
+              </span>
+              <h3>Una decisión difícil</h3>
+              <p>Necesitan claridad para decidir sobre convivir, casarse, tener hijos o separarse.</p>
+            </div>
+            <div className={styles.triggerCard}>
+              <span className={styles.mi} style={{ fontSize: "26px", color: "#8a2be2" }} aria-hidden="true">
+                family_restroom
+              </span>
+              <h3>Cambios que los desbordan</h3>
+              <p>La llegada de un hijo, una mudanza, una pérdida o el estrés del trabajo los supera.</p>
             </div>
           </div>
         </div>
